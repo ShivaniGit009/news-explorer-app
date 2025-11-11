@@ -22,9 +22,8 @@ It allows users to search for specific topics, view trending articles, and explo
 • Fully responsive for all screen sizes  
 • Error handling and loading states  
 
----
 
-## 🛠️ Tech Stack
+## Tech Stack
 
  Technology | Purpose |
 |-------------|----------|
@@ -38,7 +37,7 @@ It allows users to search for specific topics, view trending articles, and explo
 
 
 ## Folder Structure
-
+```bash 
 ai-news-explorer-app/
 ├── public/
 │ ├── favicon.ico
@@ -61,11 +60,14 @@ ai-news-explorer-app/
 ├── tailwind.config.js
 ├── postcss.config.js
 └── vite.config.js
+```
 
 ## Installation
 
 1 Clone the repository
+```bash
 git clone https://github.com/ShivaniGit009/news-explorer-app
+```
 
 2 Install dependencies
 npm install
