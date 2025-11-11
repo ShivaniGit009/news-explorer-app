@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useRef } from "react"; // ✅ add this
+import { useEffect, useRef } from "react";
 import { fetchNews } from "../utils/api";
 
 function Category() {
@@ -13,8 +13,6 @@ function Category() {
   };
 
   const topic = topicMap[category?.toLowerCase()] || "general";
-
-  // ✅ React Query fetch
   const {
     data: articles = [],
     isLoading,
@@ -24,21 +22,21 @@ function Category() {
     queryFn: () => fetchNews(topic),
   });
 
-  // ✅ ADD THIS BLOCK RIGHT BELOW useQuery
+
   const hasLogged = useRef(false);
 
   useEffect(() => {
     if (!hasLogged.current && articles?.length) {
-      console.log("✅ API fetched once for:", category, "→ topic:", topic);
+      console.log("API fetched once for:", category, "→ topic:", topic);
       hasLogged.current = true;
     }
   }, [articles, category, topic]);
 
-  // Optional reset when category changes (so it logs again for new category)
+
   useEffect(() => {
     hasLogged.current = false;
   }, [category]);
-  // ✅ END OF NEW LOGIC
+
 
   if (isLoading)
     return <p className="text-center mt-8">Loading {category} news...</p>;
@@ -64,14 +62,14 @@ function Category() {
               className="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition"
             >
               <img
-  src={article.image ? article.image : "https://picsum.photos/400/200?random=1"}
-  alt={article.title || "No image available"}
-  className="w-full h-44 object-cover"
-  onError={(e) => {
-    e.target.onerror = null; // Prevents infinite loop
-    e.target.src = "https://picsum.photos/400/200?random=2";
-  }}
-/>
+                src={article.image ? article.image : "https://picsum.photos/400/200?random=1"}
+                alt={article.title || "No image available"}
+                className="w-full h-44 object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://picsum.photos/400/200?random=2";
+                }}
+              />
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-2 line-clamp-2">
                   {article.title}

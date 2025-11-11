@@ -1,4 +1,3 @@
-// src/utils/api.js
 import axios from "axios";
 
 const API_KEY = "34e57d96c48c04abde2ba483e0fe18e2";
@@ -15,7 +14,6 @@ export const fetchNews = async (query = "general") => {
     },
   });
 
-  // Remove duplicates based on title
   const uniqueArticles = response.data.articles.filter(
     (a, i, self) => i === self.findIndex((b) => b.title === a.title)
   );

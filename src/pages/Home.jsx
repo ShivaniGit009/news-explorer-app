@@ -3,7 +3,6 @@ import { fetchNews } from "../utils/api";
 import aiBanner from "../assets/images/ai-banner.jpg";
 
 function Home() {
-  // 👇 Fetch AI or general news for homepage
   const { data: articles, isLoading, isError } = useQuery({
     queryKey: ["news", "home"],
     queryFn: () => fetchNews("artificial intelligence"),
@@ -24,10 +23,6 @@ function Home() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
-      {/* Heading */}
-      {/* <h2 className="text-2xl font-bold mb-6 text-gray-900">Trending Now</h2> */}
-
-      {/* Featured Article */}
       {trending.map((item, index) => (
         <div key={index} className="mb-10">
           <div className="relative overflow-hidden rounded-2xl shadow-sm">
@@ -44,7 +39,6 @@ function Home() {
         </div>
       ))}
 
-      {/* Other Articles */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {articles?.map((article, index) => (
           <div
@@ -52,14 +46,14 @@ function Home() {
             className="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition"
           >
             <img
-  src={article.image ? article.image : "https://picsum.photos/400/200?random=1"}
-  alt={article.title || "No image available"}
-  className="w-full h-44 object-cover"
-  onError={(e) => {
-    e.target.onerror = null; // Prevents infinite loop
-    e.target.src = "https://picsum.photos/400/200?random=2";
-  }}
-/>
+              src={article.image ? article.image : "https://picsum.photos/400/200?random=1"}
+              alt={article.title || "No image available"}
+              className="w-full h-44 object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://picsum.photos/400/200?random=2";
+              }}
+            />
             <div className="p-4">
               <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
                 {article.title}

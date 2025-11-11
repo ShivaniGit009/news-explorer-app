@@ -37,7 +37,6 @@ export default function Navbar() {
     }
   };
 
-
   const clearSearch = () => {
     setQuery("");
     setResults([]);
@@ -94,8 +93,7 @@ export default function Navbar() {
             )}
           </form>
 
-          {/* Desktop dropdown results (absolute) */}
-          {/* absolute span left-0 right-0 so it fits within container on small but on md it will be right aligned */}
+          {/* Desktop dropdown results*/}
           {query && results.length > 0 && (
             <div className="absolute left-0 right-0 md:right-0 md:w-96 mt-2 bg-white border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
               {results.map((article, i) => (
@@ -127,7 +125,6 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* Loading or error states (desktop) */}
           {loading && (
             <div className="absolute left-0 right-0 md:right-0 md:w-96 mt-2 bg-white border rounded-lg shadow-lg z-50 p-3 text-sm text-gray-500">
               Searching...
@@ -140,7 +137,6 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile menu button (visible on small screens) */}
         <button
           className="md:hidden text-gray-700 hover:text-blue-600 p-2 rounded-md"
           onClick={() => setMobileOpen((v) => !v)}
@@ -150,11 +146,10 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile panel (links + search) */}
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white px-4 py-4">
           <div className="flex flex-col space-y-3">
-            {/* Nav items vertical */}
+
             {navItems.map((item) => (
               <NavLink
                 key={item.name}
@@ -172,7 +167,6 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* Mobile search form */}
             <form onSubmit={(e) => { setMobileOpen(true); handleSearch(e); }} className="mt-2">
               <div className="flex items-center gap-2">
                 <input
@@ -191,7 +185,6 @@ export default function Navbar() {
               </div>
             </form>
 
-            {/* Mobile results (render in-flow, not absolute) */}
             <div>
               {loading && (
                 <p className="text-center text-gray-500 mt-3">Searching...</p>

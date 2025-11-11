@@ -6,11 +6,11 @@ function Search() {
   const [query, setQuery] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // React Query fetch
+
   const { data: articles, isLoading, isError } = useQuery({
     queryKey: ["search", searchTerm],
     queryFn: () => fetchNews(searchTerm),
-    enabled: !!searchTerm, // Only fetch when searchTerm is set
+    enabled: !!searchTerm,
   });
 
   const handleSearch = (e) => {
