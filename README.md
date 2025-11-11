@@ -1,16 +1,77 @@
-# React + Vite
+<h1 align="center">📰 AI News Explorer</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <b>A modern React-based news website that fetches real-time news using the GNews API.</b><br />
+  Built with React Router, React Query & Tailwind CSS.
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+**AI News Explorer** is a responsive web application that displays the latest news articles categorized under **Technology**, **Business**, and **Health**.  
+It allows users to search for specific topics, view trending articles, and explore detailed news insights — all powered by the **GNews API**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+• Clean and modular React components  
+• Category-wise news pages (Technology, Business, Health)  
+• Live search with instant dropdown results  
+• API data fetching via **React Query**  
+• Beautiful UI with **Tailwind CSS**  
+• Fully responsive for all screen sizes  
+• Error handling and loading states  
+
+---
+
+## 🛠️ Tech Stack
+
+• Technology | Purpose |
+|-------------|----------|
+| React | UI Framework.
+| React Router | Navigation between pages.
+| React Query | API data fetching and caching.
+| Tailwind CSS | Styling.
+| Axios | API requests.
+| GNews API | News data source.
+| Vite | Fast development environment.
+
+---
+
+## Folder Structure
+
+ai-news-explorer-app/
+├── public/
+│ ├── favicon.ico
+│ ├── ai-banner.jpg
+│ └── index.html
+├── src/
+│ ├── components/
+│ │ ├── Navbar.jsx
+│ │ └── NewsCard.jsx
+│ ├── pages/
+│ │ ├── Home.jsx
+│ │ └── About.jsx
+│ ├── utils/
+│ │ └── api.js
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── index.css
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── vite.config.js
+
+## Installation
+
+1 Clone the repository
+git clone https://github.com/ShivaniGit009/news-explorer-app
+
+2 Install dependencies
+npm install
+
+3 Run the project
+npm run dev
