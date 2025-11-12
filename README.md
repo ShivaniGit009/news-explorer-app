@@ -1,18 +1,16 @@
-<h1 align="center">📰 AI News Explorer</h1>
+<h1 align="center">AI News Explorer</h1>
 
 <p align="center">
   <b>A modern React-based news website that fetches real-time news using the GNews API.</b><br />
   Built with React Router, React Query & Tailwind CSS.
 </p>
 
----
 
 ## Overview
 
 **AI News Explorer** is a responsive web application that displays the latest news articles categorized under **Technology**, **Business**, and **Health**.  
 It allows users to search for specific topics, view trending articles, and explore detailed news insights — all powered by the **GNews API**.
 
----
 
 ## Features
 
@@ -24,11 +22,10 @@ It allows users to search for specific topics, view trending articles, and explo
 • Fully responsive for all screen sizes  
 • Error handling and loading states  
 
----
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-• Technology | Purpose |
+ Technology | Purpose |
 |-------------|----------|
 | React | UI Framework.
 | React Router | Navigation between pages.
@@ -38,10 +35,9 @@ It allows users to search for specific topics, view trending articles, and explo
 | GNews API | News data source.
 | Vite | Fast development environment.
 
----
 
 ## Folder Structure
-
+```bash 
 ai-news-explorer-app/
 ├── public/
 │ ├── favicon.ico
@@ -64,11 +60,14 @@ ai-news-explorer-app/
 ├── tailwind.config.js
 ├── postcss.config.js
 └── vite.config.js
+```
 
 ## Installation
 
 1 Clone the repository
+```bash
 git clone https://github.com/ShivaniGit009/news-explorer-app
+```
 
 2 Install dependencies
 npm install
